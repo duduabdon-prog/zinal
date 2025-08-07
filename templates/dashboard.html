@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - ZINAL</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h2>Olá, {{ current_user.email }}</h2>
+    <a href="/homebroker">Ir para HomeBroker</a><br><br>
+    <canvas id="grafico"></canvas>
+    <script>
+        const ctx = document.getElementById('grafico').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex'],
+                datasets: [{
+                    label: 'Lucros da semana',
+                    data: [12, 19, 3, 5, 2]
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
